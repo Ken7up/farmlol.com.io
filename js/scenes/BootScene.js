@@ -14,8 +14,14 @@ export default class BootScene extends Phaser.Scene {
         this.load.image('ground', 'assets/images/nen.png');
         // Tải ảnh hàng rào và cổng rào
         this.load.image('hangrao', 'assets/images/hangrao.png');
-        this.load.image('xuongrong', 'assets/images/xuongrong.png');
-        this.load.image('xuongrong2', 'assets/images/xuongrong2.png');
+        // Tải spritesheet xương rồng gộp (hangrao2)
+        // Lưu ý: Bạn nhớ mở ảnh hangrao2.png lên xem kích thước thật, 
+        // frameWidth = 1/2 chiều ngang của ảnh, frameHeight = chiều dọc của ảnh.
+        this.load.spritesheet('hangrao2', 'assets/images/hangrao2.png', {
+            frameWidth: 2048,  // <-- Đổi số này cho đúng với kích thước 1/2 chiều ngang ảnh của bạn
+            frameHeight: 2730  // <-- Đổi số này bằng chiều dọc ảnh của bạn
+        });
+
         this.load.spritesheet('congrao', 'assets/images/congrao.png', {
         frameWidth: 1600,  // <-- Thay số này bằng chiều ngang của ảnh
         frameHeight: 1000   // <-- Thay số này bằng 1/2 chiều dọc của ảnh
